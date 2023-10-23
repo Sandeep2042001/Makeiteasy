@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,500;1,600&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;1,400&display=swap" rel="stylesheet">
+    <title>Queue Data Structure</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content:space-around;
+           margin-bottom: 40px;
+            
+         }
+ 
+         nav{
+             position: fixed;
+             
+             background-color: #282829;
+             width: 100%;
+             height: 60px;
+             margin-top: 0%;
+             
+             opacity: 0.55;
+             z-index: 2;
+         }
+         nav ul {
+             list-style: none;
+             display: flex;
+             margin-top: 15px;
+             justify-content:center;
+         }
+ 
+         nav li {
+             margin: 0 20px;
+         }
+ 
+         nav a {
+             text-decoration: none;
+             color: white;
+             font-weight: bold;
+         }
+
+        #container {
+            max-width: 800px;
+            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        ul, ol {
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #fff;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #282829;
+            color: #fff;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #282829;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .topics {
+            background-color: #282829;
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .topic-link {
+            cursor: pointer;
+            color: green;
+            font-weight: bold;
+        }
+
+        .topic-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        /* Your custom CSS styles can be added here */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                
+                <li><a href="index.html">Home</a></li>
+             
+            </ul>
+        </nav>
+     
+    </header>
+    <div id="container">
+        <h2>Introduction to Queues</h2>
+        <p>A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. In a queue, elements are added at the rear and removed from the front. It is commonly used in various applications to manage data in an ordered manner.</p>
+
+        <h2>FIFO Principle of Queue</h2>
+        <p>A Queue is like a line waiting to purchase tickets, where the first person in line is the first person served (i.e. First come first serve).</p>
+        <p>Position of the entry in a queue ready to be served, that is, the first entry that will be removed from the queue, is called the front of the queue (sometimes, head of the queue), similarly, the position of the last entry in the queue, that is, the one most recently added, is called the rear (or the tail) of the queue.</p>
+        <div class="image-container">
+            <img src="queue.png" alt="FIFO Property of Queue">
+        </div>
+
+        <h2>Characteristics of Queue</h2>
+        <ul>
+            <li>Queue can handle multiple data.</li>
+            <li>We can access both ends.</li>
+            <li>They are fast and flexible.</li>
+        </ul>
+
+
+        <h2>Key Features of Queues</h2>
+        <ul>
+            <li>First-In-First-Out (FIFO) order.</li>
+            <li>Enqueue operation to add elements to the rear of the queue.</li>
+            <li>Dequeue operation to remove elements from the front of the queue.</li>
+            <li>Commonly used in task scheduling, print spooling, and more.</li>
+        </ul>
+
+
+        <h2>Types of Queue</h2>
+        <ul>
+            <li><strong>Input Restricted Queue:</strong> This is a simple queue. In this type of queue, the input can be taken from only one end but deletion can be done from any of the ends.</li>
+            <li><strong>Output Restricted Queue:</strong> This is also a simple queue. In this type of queue, the input can be taken from both ends but deletion can be done from only one end.</li>
+            <li><strong>Circular Queue:</strong> This is a special type of queue where the last position is connected back to the first position. Here also, the operations are performed in FIFO order.</li>
+            <li><strong>Double-Ended Queue (Dequeue):</strong> In a double-ended queue, the insertion and deletion operations, both can be performed from both ends.</li>
+            <li><strong>Priority Queue:</strong> A priority queue is a special queue where the elements are accessed based on the priority assigned to them.</li>
+        </ul>
+        <p>To learn more about different types of queues, read the article on <a href="#">Types of Queues</a>.</p>
+
+        <h2>Basic Operations for Queue in Data Structure</h2>
+        <ul>
+            <li><strong>Enqueue():</strong> Adds (or stores) an element to the end of the queue.</li>
+            <li><strong>Dequeue():</strong> Removal of elements from the queue.</li>
+            <li><strong>Peek() or front():</strong> Acquires the data element available at the front node of the queue without deleting it.</li>
+            <li><strong>rear():</strong> This operation returns the element at the rear end without removing it.</li>
+            <li><strong>isFull():</strong> Validates if the queue is full.</li>
+            <li><strong>isNull():</strong> Checks if the queue is empty.</li>
+        </ul>
+
+        <h3>Enqueue() Operation:</h3>
+        <p>Enqueue() operation in Queue adds (or stores) an element to the end of the queue. The following steps should be taken to enqueue (insert) data into a queue:</p>
+        <ol>
+            <li>Check if the queue is full.</li>
+            <li>If the queue is full, return overflow error and exit.</li>
+            <li>If the queue is not full, increment the rear pointer to point to the next empty space.</li>
+            <li>Add the data element to the queue location, where the rear is pointing.</li>
+            <li>Return success.</li>
+        </ol>
+
+        <h3>Dequeue() Operation:</h3>
+        <p>Removes (or accesses) the first element from the queue. The following steps are taken to perform the dequeue operation:</p>
+        <ol>
+            <li>Check if the queue is empty.</li>
+            <li>If the queue is empty, return the underflow error and exit.</li>
+            <li>If the queue is not empty, access the data where the front is pointing.</li>
+            <li>Increment the front pointer to point to the next available data element.</li>
+            <li>Return success.</li>
+        </ol>
+        <h3>isEmpty() Operation:</h3>
+<p>This operation returns a boolean value that indicates whether the queue is empty or not.</p>
+
+<h3>isFull() Operation:</h3>
+<p>This operation returns a boolean value that indicates whether the queue is full or not.</p>
+
+<h2>Applications of Queue</h2>
+<p>Application of a queue is common. In a computer system, there may be queues of tasks waiting for the printer, for access to disk storage, or even in a time-sharing system, for use of the CPU. Within a single program, there may be multiple requests to be kept in a queue, or one task may create other tasks, which must be done in turn by keeping them in a queue.</p>
+<ul>
+    <li>It has a single resource and multiple consumers.</li>
+    <li>It synchronizes between slow and fast devices.</li>
+    <li>In a network, a queue is used in devices such as a router/switch and mail queue.</li>
+</ul>
+<p>Variations: dequeue, priority queue, and double-ended priority queue.</p>
+
+<h2>Top 20 Interview Questions on Queue</h2>
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Difficulty Level</th>
+    </tr>
+    <tr>
+        <td>What is a Queue data structure?</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>Explain the FIFO principle of a queue.</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>What are the basic operations of a queue?</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>How is a queue different from a stack?</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>What are the applications of a queue data structure?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>Explain the Enqueue() operation with an example.</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>What is the significance of the Dequeue() operation in a queue?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>What are the different types of queues?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>How does a circular queue work, and when is it useful?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>What is a priority queue, and when is it used?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>Explain the working of a double-ended queue (Dequeue).</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>What is the purpose of the Peek() operation in a queue?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>When is a queue considered empty?</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>How does the isFull() operation work in a queue?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>What is the significance of isEmpty() in a queue?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>Explain the differences between input-restricted and output-restricted queues.</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>When is a priority queue preferred over a regular queue?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>What is the primary use of a circular queue?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>How do you implement a queue using an array?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>What is the time complexity of the Dequeue operation in a queue?</td>
+        <td>Intermediate</td>
+    </tr>
+</table>
+
+
+        <!-- You can add more sections and content as needed -->
+
+
+        <h2>Important Points about Queues</h2>
+        <ul>
+            <li>Queues follow the FIFO principle.</li>
+            <li>Common queue operations include enqueue and dequeue.</li>
+            <li>Queues are commonly implemented using arrays or linked lists.</li>
+        </ul>
+        <h2>FAQs (Frequently Asked Questions) on Queue</h2>
+<ol>
+    <li>
+        <strong>What data structure can be used to implement a priority queue?</strong><br>
+        Priority queues can be implemented using a variety of data structures, including linked lists, arrays, binary search trees, and heaps. Priority queues are best implemented using the heap data structure.
+    </li>
+    <li>
+        <strong>Queues are used for what purpose?</strong><br>
+        In addition to making your data persistent, queues reduce errors that occur when different parts of your system are down.
+    </li>
+    <li>
+        <strong>In data structures, what is a double-ended queue?</strong><br>
+        In a double-ended queue, elements can be inserted and removed at both ends.
+    </li>
+    <li>
+        <strong>What is better, a stack or a queue?</strong><br>
+        If you want things to come out in the order you put them in, use a queue. Stacks are useful when you want to reorder things after putting them in.
+    </li>
+</ol>
+
+<!-- You can add more sections and content as needed -->
+
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,500;1,600&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;1,400&display=swap" rel="stylesheet">
+    <title>Array Data Structure</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            family: 'Pacifico', cursive;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+         
+            
+          
+        }
+       
+
+        header {
+            display: flex;
+            justify-content:space-around;
+           margin-bottom: 40px;
+            
+         }
+ 
+         nav{
+             position: fixed;
+             
+             background-color: #282829;
+             width: 100%;
+             height: 60px;
+             margin-top: 0%;
+             
+             opacity: 0.55;
+             z-index: 2;
+         }
+         nav ul {
+             list-style: none;
+             display: flex;
+             margin-top: 15px;
+             justify-content:center;
+         }
+ 
+         nav li {
+             margin: 0 20px;
+         }
+ 
+         nav a {
+             text-decoration: none;
+             color: white;
+             font-weight: bold;
+         }
+
+        #container {
+            max-width: 800px;
+            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .topics {
+            background-color: #282829;
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .topic-link {
+            cursor: pointer;
+            color: green;
+            font-weight: bold;
+        }
+
+        .topic-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #282829;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                
+                <li><a href="index.html">Home</a></li>
+             
+            </ul>
+        </nav>
+     
+    </header>
+    <div id="container">
+        <h2>What is Array?</h2>
+        <p>An array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).</p>
+
+        <div class="image-container">
+            <img src="array.png" alt="Array">
+        </div>
+
+        <h2>Topics in Array</h2>
+        <ul class="topics">
+            <li>
+                <span class="topic-link" onclick="toggleTopic('what-is-array')">What is Array?</span>
+                <div class="topic-content" id="what-is-array">
+                    <p>An array is a collection of elements, each identified by an index or a key. It is a data structure used to store a fixed-size sequential collection of elements of the same type.</p>
+                </div>
+            </li>
+            <li>
+                <span class="topic-link" onclick="toggleTopic('intro-to-array')">Introduction to Array</span>
+                <div class="topic-content" id="intro-to-array">
+                    <p>Arrays are commonly used in computer programs to organize and manage data. They provide quick access to data elements and are used for various applications.</p>
+            </li>
+            <li>
+                <span class "topic-link" onclick="toggleTopic('advantages-disadvantages')">Advantages and Disadvantages</span>
+                <div class="topic-content" id="advantages-disadvantages">
+                    <p>Arrays have advantages such as fast element access, but they also have disadvantages like a fixed size. Understanding when to use arrays is important in software development.</p>
+                </div>
+            </li>
+        </ul>
+        <h2>Why Array Data Structures are Needed?</h2>
+<p>Assume there is a class of five students, and if we have to keep records of their marks in the examination, then we can do this by declaring five variables individually and keeping track of records. However, what if the number of students becomes very large? It would be challenging to manipulate and maintain the data.</p>
+
+<p>What it means is that we can use normal variables (v1, v2, v3, ...) when we have a small number of objects. But if we want to store a large number of instances, it becomes difficult to manage them with normal variables. The idea of an array is to represent many instances in one variable.</p>
+
+<h2>Types of Arrays:</h2>
+<p>There are majorly two types of arrays:</p>
+
+<ul>
+    <li>One-dimensional array (1-D arrays): You can imagine a 1D array as a row, where elements are stored one after another.</li>
+    <img src="1d-array.png" alt="1D array">
+    
+    <li>Two-dimensional array: 2-D Multidimensional arrays can be considered as an array of arrays or as a matrix consisting of rows and columns.</li>
+    <img src="2d-array.png" alt="2D array">
+    
+    <li>Three-dimensional array: A 3-D Multidimensional array contains three dimensions, so it can be considered an array of two-dimensional arrays.</li>
+    <img src="3D-array.png" alt="3D array">
+</ul>
+
+<h2>Types of Array Operations:</h2>
+<ul>
+    <li>Traversal: Traverse through the elements of an array.</li>
+    <li>Insertion: Inserting a new element in an array.</li>
+    <li>Deletion: Deleting an element from the array.</li>
+    <li>Searching: Search for an element in the array.</li>
+    <li>Sorting: Maintaining the order of elements in the array.</li>
+</ul>
+
+<h2>Advantages of Using Arrays:</h2>
+<ul>
+    <li>Arrays allow random access to elements. This makes accessing elements by position faster.</li>
+    <li>Arrays have better cache locality which makes a significant difference in performance.</li>
+    <li>Arrays represent multiple data items of the same type using a single name.</li>
+    <li>Arrays store multiple data of similar types with the same name.</li>
+    <li>Array data structures are used to implement other data structures like linked lists, stacks, queues, trees, graphs, etc.</li>
+</ul>
+
+<h2>Disadvantages of Arrays:</h2>
+<ul>
+    <li>As arrays have a fixed size, once the memory is allocated to them, it cannot be increased or decreased, making it impossible to store extra data if required. An array of fixed size is referred to as a static array.</li>
+    <li>Allocating less memory than required to an array leads to a loss of data.</li>
+    <li>An array is homogeneous in nature, so a single array cannot store values of different data types.</li>
+    <li>Arrays store data in contiguous memory locations, which makes deletion and insertion very difficult to implement. This problem is overcome by implementing linked lists, which allow elements to be accessed sequentially.</li>
+</ul>
+
+<h2>Applications of Arrays:</h2>
+<ul>
+    <li>They are used in the implementation of other data structures such as array lists, heaps, hash tables, vectors, and matrices.</li>
+    <li>Database records are usually implemented as arrays.</li>
+    <li>It is used in lookup tables by computers.</li>
+    <li>It is used for different sorting algorithms such as bubble sort, insertion sort, merge sort, and quick sort.</li>
+</ul>
+
+
+        <h2>Frequently Asked Questions on Arrays</h2>
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Difficulty Level</th>
+            </tr>
+            <tr>
+                <td>What is an array?</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>How do you access elements in an array?</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>What are the advantages of using arrays?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What are the disadvantages of arrays?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>How do you find the length of an array?</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>Explain the concept of multi-dimensional arrays.</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What is the difference between an array and a linked list?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>How do you reverse an array in-place?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Explain the concept of dynamic arrays.</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>How do you remove duplicates from an array?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What is the time complexity of various array operations?</td>
+                <td>Advanced</td>
+            </tr>
+            <tr>
+                <td>How do you implement a resizable array?</td>
+                <td>Advanced</td>
+            </tr>
+            <tr>
+                <td>Explain the concept of sparse arrays.</td>
+                <td>Advanced</td>
+            </tr>
+            <tr>
+                <td>How do you rotate an array to the right by a given number of positions?</td>
+                <td>Advanced</td>
+            </tr>
+            <tr>
+                <td>What is a jagged array?</td>
+                <td>Advanced</td>
+            </tr>
+        </table>
+        <h2>Frequently Asked Questions (FAQs) about Arrays</h2>
+<ol>
+    <li>What is an array in data structure with example?
+        <p>An array is a collection of items of the same data type stored at contiguous memory locations. Ex. int arr[5] = {1,2,3,4,5};</p>
+    </li>
+
+    <li>Why array is a data structure?
+        <p>Arrays store elements of the same type; they are classified as homogeneous data structures. They can store numbers, strings, characters, boolean values (true and false), objects, and so on.</p>
+    </li>
+
+    <li>What data structure is an array?
+        <p>An array is a linear data structure that stores similar elements in contiguous memory locations.</p>
+    </li>
+
+    <li>What are the types of arrays?
+        <p>There are majorly two types of arrays:
+            <ul>
+                <li>One-dimensional array</li>
+                <li>Multidimensional array</li>
+            </ul>
+        </p>
+    </li>
+
+    <li>How is data stored in an array?
+        <p>An array is a collection of items of the same data type stored at contiguous memory locations, and the elements are stored one after another in memory. An array uses an index system starting at 0 and going to (n-1), where n is its size.</p>
+    </li>
+
+    <li>Difference between array and structure?
+        <p>The structure can contain variables of different types, but an array only contains variables of the same type.</p>
+    </li>
+
+    <li>What are the limitations of an array?
+        <p>An array is a collection of items of the same data type. That means, in an integer array only integer values can be stored, while in a float array only floating values, and character arrays can have only characters. Thus, no array can have values of two data types.</p>
+    </li>
+
+    <li>What are the advantages of an array?
+        <p>There are multiple advantages of the array data structure, and some of them are:
+            <ul>
+                <li>Arrays allow random access to elements. This makes accessing elements by position faster.</li>
+                <li>Arrays store multiple data of similar types with the same name.</li>
+                <li>Array data structures are used to implement other data structures like linked lists, stacks, queues, trees, graphs, etc.</li>
+            </ul>
+        </p>
+    </li>
+
+    <li>What is the purpose of using arrays?
+        <p>An array is used when several variables of the same type need to be used, and it can be defined as a sequence of objects of the same type.</p>
+    </li>
+
+    <li>What is a multidimensional array?
+        <p>A multi-dimensional array can be termed as an array of arrays that stores homogeneous data in tabular form. Data in Multidimensional Arrays are stored in row-major order.</p>
+    </li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>After the discussion, we concluded that arrays are a simple method of accessing elements of the same type by grouping them, and we can find the elements efficiently by their indexes and can perform different operations using them. Thus, they are more efficient when it comes to memory allocation and should be used in all modern programming languages. So, this becomes a favorite topic for the perspective of the interview, and most of the companies generally asked about the problems on the array. For all these reasons, we must have a good knowledge of it.</p>
+
+<h2>Related Articles</h2>
+<ul>
+    <li><a href="https://example.com/article1"  style="color: green;">How to Start Data Learning DSA?</a></li>
+    <li><a href="https://example.com/article2" style="color: green;">Competitive Programming – A Complete Guide</a></li>
+    <li><a href="https://example.com/article3" style="color: green;">How Can One Become Good at Data Structures and Algorithms Easily?</a></li>
+    <li><a href="https://example.com/article4" style="color: green;">Why Data Structures and Algorithms Are Important to Learn?</a></li>
+    <li><a href="https://example.com/article5" style="color: green;">Top 15 Websites for Coding Challenges and Competitions</a></li>
+    <li><a href="https://example.com/article6" style="color: green;">SDE SHEET – A Complete Guide for SDE Preparation</a></li>
+    <li><a href="https://example.com/article7" style="color: green;">Amazon SDE Sheet – A Guide for Amazon SDE Interview Preparation</a></li>
+    <li><a href="https://example.com/article8" style="color: green;">Google Interview Preparation for Software Engineer – A Complete Guide</a></li>
+    <li><a href="https://example.com/article9" style="color: green;">100 Days of Code – A Complete Guide for Beginners and Experienced</a></li>
+</ul>
+
+    </div>
+
+    <script>
+        function toggleTopic(topicId) {
+            var topicContent = document.getElementById(topicId);
+            if (topicContent.style.display === "none" || topicContent.style.display === "") {
+                topicContent.style.display = "block";
+            } else {
+                topicContent.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

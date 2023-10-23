@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,500;1,600&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;1,400&display=swap" rel="stylesheet">
+    <title>QuickSort - Data Structure and Algorithm Tutorials</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        nav {
+            position: fixed;
+            background-color: #282829;
+            width: 100%;
+            height: 60px;
+            margin-top: 0;
+            opacity: 0.55;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        #container {
+            max-width: 800px;
+            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        .complexity-analysis {
+            background-color: #282829;
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        ul {
+            margin-top: 10px;
+        }
+
+        li {
+            font-size: 16px;
+        }
+
+        .advantages, .drawbacks {
+            background-color: #282829;
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .advantages h2, .drawbacks h2 {
+            font-size: 18px;
+        }
+
+        .advantages ul, .drawbacks ul {
+            margin-top: 10px;
+        }
+
+        .advantages li, .drawbacks li {
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #282829;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <h1>QuickSort - Data Structure and Algorithm Tutorials</h1>
+        <p>QuickSort is a sorting algorithm based on the Divide and Conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot by placing the pivot in its correct position in the sorted array.</p>
+
+        <div class="image-container">
+            <img src="quick.jpg" alt="QuickSort">
+        </div>
+
+        <h2>How does QuickSort work?</h2>
+        <p>The key process in QuickSort is a partition(). The target of partitions is to place the pivot (any element can be chosen to be a pivot) at its correct position in the sorted array and put all smaller elements to the left of the pivot, and all greater elements to the right of the pivot.</p>
+        <p>Partition is done recursively on each side of the pivot after the pivot is placed in its correct position, and this finally sorts the array.</p>
+
+        <div class="complexity-analysis">
+            <h3>Complexity Analysis of QuickSort</h3>
+            <ul>
+                <li><strong>Time Complexity (Average Case):</strong> O(N log N)</li>
+                <li><strong>Worst Case Time Complexity:</strong> O(N^2)</li>
+                <li><strong>Auxiliary Space:</strong> O(log N)</li>
+            </ul>
+        </div>
+
+        <div class="advantages">
+            <h2>Advantages of QuickSort</h2>
+            <ul>
+                <li>Efficient sorting algorithm.</li>
+                <li>Well-suited for large datasets.</li>
+                <li>More efficient than other O(N^2) sorting algorithms like Bubble Sort or Insertion Sort.</li>
+            </ul>
+        </div>
+
+        <div class="drawbacks">
+            <h2>Drawbacks of QuickSort</h2>
+            <ul>
+                <li>Worst-case time complexity is O(N^2).</li>
+                <li>Not a stable sorting algorithm.</li>
+            </ul>
+        </div>
+
+        <h2>Applications of QuickSort</h2>
+        <p>QuickSort is widely used in various computer programs, including the C library function qsort, C++ library function sort, and Java library functions Arrays.sort().</p>
+
+        <h2>Comparison Between QuickSort and Other Sorting Algorithms</h2>
+        <table>
+            <tr>
+                <th>Comparison</th>
+                <th>QuickSort</th>
+                <th>Bubble Sort</th>
+                <th>Insertion Sort</th>
+            </tr>
+            <tr>
+                <td>Time Complexity (Average Case)</td>
+                <td>O(N log N)</td>
+                <td>O(N^2)</td>
+                <td>O(N^2)</td>
+            </tr>
+            <tr>
+                <td>Efficiency</td>
+                <td>Efficient for large datasets.</td>
+                <td>Not efficient for large datasets.</td>
+                <td>Not efficient for large datasets.</td>
+            </tr>
+            <tr>
+                <td>Stability</td>
+                <td>Not stable.</td>
+                <td>Stable.</td>
+                <td>Stable.</td>
+            </tr>
+            <tr>
+                <td>Memory Usage</td>
+                <td>Requires O(log N) auxiliary space.</td>
+                <td>Requires O(1) auxiliary space.</td>
+                <td>Requires O(1) auxiliary space.</td>
+            </tr>
+        </table>
+
+        <h2>Top 20 Interview Questions on Quick Sort</h2>
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Difficulty Level</th>
+            </tr>
+            <tr>
+                <td>What is QuickSort?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Explain the concept of Divide and Conquer.</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What is a pivot element in QuickSort?</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>How does QuickSort work?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What is the time complexity of QuickSort in the average case?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What is the worst-case time complexity of QuickSort?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Explain the concept of partitioning in QuickSort.</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Advantages of QuickSort.</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Drawbacks of QuickSort.</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Applications of QuickSort.</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What is the purpose of using QuickSort?</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>What are the conditions for applying QuickSort?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What is the time complexity of QuickSort in the worst case?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Explain the concept of tail recursion.</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What is the space complexity of QuickSort?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What are the advantages of tail recursion in QuickSort?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What are the disadvantages of tail recursion in QuickSort?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>How is QuickSort different from MergeSort?</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>What are some common mistakes to avoid when implementing QuickSort?</td>
+                <td>Intermediate</td>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+</html>

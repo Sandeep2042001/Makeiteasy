@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Searching Algorithm</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #000000; /* Set the background color to black */
+            color: #fff; /* Set the text color to white */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        nav {
+            position: fixed;
+            background-color: #333;
+            width: 100%;
+            height: 60px;
+            margin-top: 0;
+            opacity: 0.85;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        #container {
+            max-width: 800px;
+            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #000000; /* Set the content background color to black */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 28px; /* Increase the font size for the main heading */
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        h3 {
+            font-size: 20px; /* Decrease the font size for subheadings */
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .topics {
+            background-color: #333; /* Set the topic background color to a darker shade */
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .topic-link {
+            cursor: pointer;
+            color: blue;
+            font-weight: bold;
+        }
+
+        .topic-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .complexity-analysis {
+            background-color: #333; /* Set the complexity analysis background color to a darker shade */
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .advantages {
+            background-color: #333; /* Set the advantages background color to a darker shade */
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .drawbacks {
+            background-color: #333; /* Set the drawbacks background color to a darker shade */
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .applications {
+            background-color: #333; /* Set the applications background color to a darker shade */
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <h1>Searching Algorithm</h1>
+        <p>A searching algorithm is designed to find a specific item or location within a data structure. It involves systematically examining elements in a dataset to determine whether a particular element matches the search criteria.</p>
+
+        <h2>Types of Searching Algorithms</h2>
+        <p>Based on the type of search operation, these algorithms are generally classified into two categories:</p>
+
+        <h3>Sequential Search</h3>
+        <p>Linear Search is defined as a sequential search algorithm that starts at one end and goes through each element of a list until the desired element is found, otherwise the search continues till the end of the data set.</p>
+
+        <h4>Linear Search Algorithm</h4>
+        <img src="linear.jpg" alt="Linear Search">
+
+        <h4>How Does Linear Search Algorithm Work?</h4>
+        <p>In Linear Search Algorithm,</p>
+
+        <ul>
+            <li>Every element is considered as a potential match for the key and checked for the same.</li>
+            <li>If any element is found equal to the key, the search is successful, and the index of that element is returned.</li>
+            <li>If no element is found equal to the key, the search yields “No match found”.</li>
+        </ul>
+
+        <div class="complexity-analysis">
+            <h2>Complexity Analysis of Linear Search</h2>
+            <h3>Time Complexity:</h3>
+            <ul>
+                <li><strong>Best Case:</strong> O(1)</li>
+                <li><strong>Worst Case:</strong> O(N)</li>
+                <li><strong>Average Case:</strong> O(N)</li>
+            </ul>
+            <h3>Auxiliary Space:</h3>
+            <p>O(1), If the recursive call stack is considered then the auxiliary space will be O(logN).</p>
+        </div>
+
+        <div class="advantages">
+            <h2>Advantages of Linear Search</h2>
+            <ul>
+                <li>Linear search can be used irrespective of whether the array is sorted or not. It can be used on arrays of any data type.</li>
+                <li>Does not require any additional memory.</li>
+                <li>It is a well-suited algorithm for small datasets.</li>
+            </ul>
+        </div>
+
+        <div class="drawbacks">
+            <h2>Drawbacks of Linear Search</h2>
+            <ul>
+                <li>Linear search has a time complexity of O(N), which in turn makes it slow for large datasets.</li>
+                <li>Not suitable for large arrays.</li>
+            </ul>
+        </div>
+
+        <h3>Interval Search</h3>
+        <p>These algorithms are specifically designed for searching in sorted data-structures. These type of searching algorithms are much more efficient than Linear Search as they repeatedly target the center of the search structure and divide the search space in half.</p>
+
+        <h4>Binary Search</h4>
+        <img src="binary.png" alt="Binary Search">
+
+        <h4>Example of Binary Search Algorithm</h4>
+
+        <p>Conditions for when to apply Binary Search in a Data Structure:</p>
+
+        <ul>
+            <li>The data structure must be sorted.</li>
+            <li>Access to any element of the data structure takes constant time.</li>
+        </ul>
+
+        <div class="complexity-analysis">
+            <h2>Complexity Analysis of Binary Search</h2>
+            <h3>Time Complexity:</h3>
+            <ul>
+                <li><strong>Best Case:</strong> O(1)</li>
+                <li><strong>Average Case:</strong> O(log N)</li>
+                <li><strong>Worst Case:</strong> O(log N)</li>
+            </ul>
+            <h3>Auxiliary Space:</h3>
+            <p>O(1), If the recursive call stack is considered then the auxiliary space will be O(logN).</p>
+        </div>
+
+        <div class="advantages">
+            <h2>Advantages of Binary Search</h2>
+            <ul>
+                <li>Binary search is faster than linear search, especially for large arrays.</li>
+                <li>More efficient than other searching algorithms with a similar time complexity, such as interpolation search or exponential search.</li>
+                <li>Binary search is well-suited for searching large datasets that are stored in external memory, such as on a hard drive or in the cloud.</li>
+            </ul>
+        </div>
+
+        <div class="drawbacks">
+            <h2>Drawbacks of Binary Search</h2>
+            <ul>
+                <li>The array should be sorted.</li>
+                <li>Binary search requires that the data structure being searched be stored in contiguous memory locations.</li>
+                <li>Binary search requires that the elements of the array be comparable, meaning that they must be able to be ordered.</li>
+            </ul>
+        </div>
+
+        <h2>Applications of Binary Search</h2>
+        <p>Binary search can be used as a building block for more complex algorithms used in machine learning, such as algorithms for training neural networks or finding the optimal hyperparameters for a model. It can also be used for searching in computer graphics, such as algorithms for ray tracing or texture mapping, and for searching a database.</p>
+   
+        <!-- Add this table to your HTML code -->
+        <h2>Basic Difference between Linear Search and Binary Search</h2>
+<table>
+    <tr>
+        <th>Comparison</th>
+        <th>Linear Search</th>
+        <th>Binary Search</th>
+    </tr>
+    <tr>
+        <td>Search Algorithm</td>
+        <td>Sequential search algorithm.</td>
+        <td>Algorithm used in a sorted array by repeatedly dividing the search interval in half.</td>
+    </tr>
+    <tr>
+        <td>Time Complexity (Average Case)</td>
+        <td>O(N)</td>
+        <td>O(log N)</td>
+    </tr>
+    <tr>
+        <td>Efficiency</td>
+        <td>Slower, especially for large arrays.</td>
+        <td>Faster, especially for large arrays.</td>
+    </tr>
+    <tr>
+        <td>Data Structure</td>
+        <td>Can be used on arrays of any data type, whether sorted or not.</td>
+        <td>Requires the data structure to be sorted for efficient searching.</td>
+    </tr>
+    <tr>
+        <td>Memory Usage</td>
+        <td>Does not require additional memory.</td>
+        <td>Requires O(1) auxiliary space.</td>
+    </tr>
+</table>
+
+    </div>
+    
+</body>
+</html>

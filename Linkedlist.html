@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,500;1,600&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;1,400&display=swap" rel="stylesheet">
+    <title>Introduction to Linked List</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            family: 'Pacifico', cursive;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content:space-around;
+           margin-bottom: 40px;
+            
+         }
+ 
+         nav{
+             position: fixed;
+             
+             background-color: #282829;
+             width: 100%;
+             height: 60px;
+             margin-top: 0%;
+             
+             opacity: 0.55;
+             z-index: 2;
+         }
+         nav ul {
+             list-style: none;
+             display: flex;
+             margin-top: 15px;
+             justify-content:center;
+         }
+ 
+         nav li {
+             margin: 0 20px;
+         }
+ 
+         nav a {
+             text-decoration: none;
+             color: white;
+             font-weight: bold;
+         }
+
+        #container {
+            max-width: 800px;
+            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                
+                <li><a href="index.html">Home</a></li>
+             
+            </ul>
+        </nav>
+     
+    </header>
+    <div id="container">
+        <h2>What is a Linked List?</h2>
+        <p>A linked list is a linear data structure that consists of a sequence of elements, each of which contains a reference (or link) to the next element in the sequence. Linked lists are often used to implement dynamic data structures that can grow or shrink as needed. They are commonly used in computer science and programming for various applications.</p>
+
+        <img src="ll.png" alt="Linked List Image">
+
+        <h2>Why Linked List Data Structure Needed?</h2>
+        <p>Here are a few advantages of a linked list that will help you understand why it is necessary to know:</p>
+        <ul>
+            <li><strong>Dynamic Data Structure:</strong> The size of memory can be allocated or de-allocated at runtime based on the operation of insertion or deletion.</li>
+            <li><strong>Ease of Insertion/Deletion:</strong> The insertion and deletion of elements are simpler than arrays since no elements need to be shifted after insertion and deletion; just the address needs to be updated.</li>
+            <li><strong>Efficient Memory Utilization:</strong> As we know, a Linked List is a dynamic data structure; the size increases or decreases as per the requirement, avoiding the wastage of memory.</li>
+            <li><strong>Implementation:</strong> Various advanced data structures can be implemented using a linked list, such as stacks, queues, graphs, hash maps, etc.</li>
+        </ul>
+    
+        <h2>Key Features of Linked Lists</h2>
+        <ul>
+            <li>Dynamic Size: Linked lists can easily grow or shrink in size as elements are added or removed.</li>
+            <li>Memory Efficiency: Linked lists can be more memory-efficient than arrays when elements are inserted or deleted frequently.</li>
+            <li>Insertions and Deletions: Insertions and deletions can be done at any position in a linked list with relative ease.</li>
+            <li>No Fixed Size: Unlike arrays, linked lists do not have a fixed size, making them suitable for dynamic data storage.</li>
+        </ul>
+
+        <h2>Types of Linked Lists</h2>
+        <p>There are several types of linked lists, including:</p>
+        <ul>
+            <li>Singly Linked List</li>
+            <li>Doubly Linked List</li>
+            <li>Circular Linked List</li>
+        </ul>
+
+        <h2>Advantages of Linked Lists:</h2>
+        <ul>
+            <li><strong>Dynamic Nature:</strong> Linked lists are used for dynamic memory allocation.</li>
+            <li><strong>Memory Efficient:</strong> Memory consumption of a linked list is efficient as its size can grow or shrink dynamically according to our requirements, which means effective memory utilization and no memory wastage.</li>
+            <li><strong>Ease of Insertion and Deletion:</strong> Insertion and deletion of nodes are easily implemented in a linked list at any position.</li>
+            <li><strong>Implementation:</strong> For the implementation of stacks and queues and for the representation of trees and graphs.</li>
+            <li><strong>The linked list can be expanded in constant time.</strong></li>
+        </ul>
+        
+        <h2>Disadvantages of Linked Lists:</h2>
+        <ul>
+            <li><strong>Memory Usage:</strong> The use of pointers is more in linked lists, making them complex and requiring more memory.</li>
+            <li><strong>Accessing a Node:</strong> Random access is not possible due to dynamic memory allocation.</li>
+            <li><strong>Search Operation Costly:</strong> Searching for an element is costly and requires O(n) time complexity.</li>
+            <li><strong>Traversing in Reverse Order:</strong> Traversing is more time-consuming, and reverse traversing is not possible in singly linked lists.</li>
+        </ul>
+        
+        <h2>Applications of Linked List:</h2>
+        <p>Here are some of the applications of a linked list:</p>
+        <ul>
+            <li>Linear data structures such as stack, queue, and non-linear data structures such as hash maps and graphs can be implemented using linked lists.</li>
+            <li>Dynamic memory allocation: We use a linked list of free blocks.</li>
+            <li>Implementation of graphs: Adjacency list representation of graphs is the most popular and uses linked lists to store adjacent vertices.</li>
+            <li>In web browsers and editors, doubly linked lists can be used to build forward and backward navigation buttons.</li>
+            <li>A circular doubly linked list can also be used for implementing data structures like Fibonacci heaps.</li>
+        </ul>
+        
+        <h2>Applications of Linked Lists in Real World:</h2>
+        <p>Linked lists find applications in various real-world scenarios:</p>
+        <ul>
+            <li>The list of songs in the music player is linked to the previous and next songs.</li>
+            <li>In a web browser, previous and next web page URLs are linked through the previous and next buttons.</li>
+            <li>In the image viewer, the previous and next images are linked with the help of the previous and next buttons.</li>
+            <li>Switching between two applications is carried out by using "alt+tab" in Windows and "cmd+tab" in Macbook. It requires the functionality of a circular linked list.</li>
+            <li>In mobile phones, we save the contacts of people. The newly entered contact details will be placed at the correct alphabetical order. This can be achieved by a linked list to set contacts at the correct alphabetical position.</li>
+            <li>The modifications made in documents are created as nodes in a doubly linked list. We can simply use the undo option by pressing Ctrl+Z to modify the contents. It is done by the functionality of a linked list.</li>
+        </ul>
+
+        <h2>Top 10 Interview Questions on Linked Lists</h2>
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Difficulty Level</th>
+    </tr>
+    <tr>
+        <td>What is a linked list?</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>Explain the difference between a singly linked list and a doubly linked list.</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>How do you reverse a linked list?</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>What is the time complexity of searching for an element in a singly linked list?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>Explain the concept of a circular linked list.</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>How can you detect a loop in a linked list?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>Discuss the advantages and disadvantages of using a linked list over an array.</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>Explain the concept of a skip list and its relation to linked lists.</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>How can you optimize a linked list for better performance in specific use cases?</td>
+        <td>Advanced</td>
+    </tr>
+    <!-- Continue adding more questions and difficulty levels here -->
+</table>
+
+<h2>Frequently Asked Questions (FAQs) about Linked Lists</h2>
+<ol>
+    <li>
+        <strong>What is a linked list data structure?</strong><br>
+        Linked lists are most commonly used to handle dynamic data elements. Linked lists consist of nodes, and a node consists of two fields: one for storing data and the other for keeping the reference to the next node.
+    </li>
+    <li>
+        <strong>What is a linked list example?</strong><br>
+        A linked list can be assumed as a garland that is made up of flowers. Similarly, a linked list is made up of nodes. Every flower in this particular garland is referred to as a node. In addition, each node points to the next node in this list, and it contains data (in this case, the type of flower).
+    </li>
+    <li>
+        <strong>Why do we need the linked list data structure?</strong><br>
+        There are some important advantages to using linked lists over other linear data structures. Unlike arrays, they are resizable at runtime and can be easily inserted and deleted.
+    </li>
+    <li>
+        <strong>What are linked lists used for?</strong><br>
+        The linked list is a linear data structure that stores data in nodes. These nodes hold both the data and a reference to the next node in the list. Linked lists are very efficient at adding and removing nodes due to their simple structure.
+    </li>
+    <li>
+        <strong>What is the difference between an array and a linked list?</strong><br>
+        There are some differences between them, including the fact that arrays are of fixed size, while linked lists are dynamic and flexible. Linked lists provide faster insertion and deletion operations.
+    </li>
+    <li>
+        <strong>Why is a linked list preferred over an array?</strong><br>
+        Linked lists are preferred due to their ability to insert and delete nodes at any point in the list at constant time, dynamic and flexible size, and faster insertion and deletion operations compared to arrays.
+    </li>
+    <li>
+        <strong>What is the difference between a singly and doubly linked list?</strong><br>
+        There are some differences between single and double linked lists, including the number of fields in each node and the ability to traverse in both forward and backward directions in a doubly linked list.
+    </li>
+    <li>
+        <strong>Which is better, an array or a linked list?</strong><br>
+        There are advantages and disadvantages to both arrays and linked lists. Linked lists are preferred for their dynamic size, ease of insertion/deletion, and more efficient operations.
+    </li>
+    <li>
+        <strong>What are the limitations of linked lists?</strong><br>
+        Linked lists have limitations, including more memory usage due to pointers, lack of random access, time-consuming traversing, and costly searching for elements.
+    </li>
+    <li>
+        <strong>Why are insertion and deletion faster in a linked list?</strong><br>
+        Insertion and deletion in a linked list are faster because they only require manipulation of node addresses without shifting elements in memory.
+    </li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>There are many advantages of the linked list compared to arrays, despite the fact that they solve similar problems to arrays. We have also discussed the advantages, disadvantages, and applications, and we concluded that linked lists are suitable when you need dynamic storage and fast add/remove operations, but they may not be suitable for querying or searching elements in a large collection of data.</p>
+
+<h2>Related Articles</h2>
+<ul>
+    <li><a href="https://example.com/arrays-article" style="color: green;">Complete Guide on Arrays Interview Preparation</a></li>
+    <li><a href="https://example.com/data-structures-article" style="color: green;">Top Data Structures Every Programmer Must Know</a></li>
+    <li><a href="https://example.com/dsa-article" style="color: green;">How to Start Data Learning DSA?</a></li>
+    <li><a href="https://example.com/hashing-article" style="color: green;">What is Hashing: A Complete Tutorial</a></li>
+    <li><a href="https://example.com/dsa-tips" style="color: green;">How to Become Good at Data Structures and Algorithms Easily</a></li>
+    <li><a href="https://example.com/dsa-importance" style="color: green;">Why Data Structures and Algorithms Are Important to Learn</a></li>
+    <li><a href="https://example.com/coding-challenges" style="color: green;">Top 15 Websites for Coding Challenges and Competitions</a></li>
+</ul>
+
+</body>
+</html>

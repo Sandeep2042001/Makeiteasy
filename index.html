@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,500;1,600&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Your Data Structures Learning Platform</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            family: 'Pacifico', cursive;
+            font-family: 'Poppins', sans-serif;
+        
+            margin: 0;
+            padding: 0;
+            background-image: url('homedp.png'); /* Background image URL */
+            
+            /* Cover the entire viewport */
+            background-repeat: repeat;
+            color: #fff; /* Light text color */
+
+        }
+
+        header {
+           display: flex;
+         
+          
+           
+        }
+
+        nav{
+            position: fixed;
+            
+            background-color: #01031b;
+            width: 100%;
+            height: 60px;
+            margin-top: 0%;
+            opacity: 0.80;
+            z-index: 2;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-top: 15px;
+            justify-content:center;
+        }
+
+        nav li {
+            
+        }
+
+       
+        nav li a{
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            transition: all .3s ease-in-out;
+        }
+
+        
+       
+
+        
+       
+        .user-actions {
+            display: flex;
+        }
+
+        .user-actions button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .main {
+            text-align: center;
+            padding: 20px;
+            padding-top: 100px; /* Adjusted padding to push content below the header */
+        }
+
+        .main h1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        main h1 img {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+        main h1{
+            
+            margin-top: 100px;
+            margin-left: 50px;
+         
+        }
+
+        /* About Us Animation Styles */
+        .about-us-content {
+            display: none;
+            padding: 20px;
+            background-color: #555; /* Dark background color */
+            color: #fff; /* Light text color */
+        }
+
+        /* Additional heading style */
+        .additional-heading {
+            color: #fff;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* Buttons for data structures */
+        .data-structure-button {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #ddd; /* Light gray background color */
+            color: #000;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin-bottom: 2px; /* Add margin to create a 2px black border between buttons */
+        }
+
+        .data-structure-button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Documentation section style */
+        .documentation-section {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .documentation-heading {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .documentation-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .documentation-button {
+            background-color: #fff;
+            color: #007BFF;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .documentation-button:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        /* Social media section style */
+        .social-media-section {
+            background-color: #333;
+            padding: 40px 0;
+        }
+
+        .social-media-heading {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .social-media-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-media-button {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .social-media-button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Creators section style */
+        .creators-section {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .creators-heading {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .creators-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Postcard section style */
+        .postcard-section {
+            background-color: #333;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .postcard-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            background-color: #010741;
+            color: #fff;
+            text-align: center;
+           
+            padding-top: 28px;
+            padding-bottom: 20px;
+            opacity: 0.50;
+        }
+
+        .copyright {
+            font-size: 14px;
+        }
+
+
+       
+      
+        /* Default card styles */
+
+        .cards{
+            display: flex;
+            justify-content:space-between;
+            padding: 35px;
+            z-index: 1;
+        }
+
+
+@media (min-width: 576px) { 
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      /* Single card per row with some spacing */
+    }
+    .img2{
+        width:25vw;
+      
+}
+.img1{
+        width:25vw;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        
+}
+.HeroP{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+ 
+
+.aboutUsMain{
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 20px;
+        margin-right: 20px;
+        
+
+ }
+}
+@media (min-width: 200px) { 
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        /* Single card per row with some spacing */
+    }
+    .img2{
+        width:40vw;
+        margin-bottom: 50px;
+}
+.img1{
+        width:40vw;
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: center;
+        
+}
+.HeroP{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+.aboutUsMain{
+   
+        display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-left: 20px;
+            margin-right: 20px;
+            
+    
+     
+}
+ }
+
+@media (min-width: 768px) { 
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+       /* Single card per row with some spacing */
+    
+    }
+    .img2{
+        width:40vw;
+        margin-bottom: 50px;
+      
+}
+.img1{
+        width:40vw;
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: center;
+        
+}
+.HeroP{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+ 
+
+.aboutUsMain{
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 45px;
+        margin-right: 45px;
+        
+
+ }
+}
+
+
+@media (min-width: 992px) {
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        /* Three cards per row on desktop */
+        
+        }
+        .img2{
+            width:25vw;
+          
+}
+.img1{
+            width:25vw;
+            margin-bottom: 30px;
+            display: flex;
+        justify-content: center;
+            
+}
+.HeroP{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.aboutUsMain{
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 45px;
+        margin-right: 45px;
+}
+
+
+ }
+
+
+@media (min-width: 1200px) { 
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        /* Four cards per row on large screens */
+      
+        }
+        .img2{
+            width:25vw;
+            margin-bottom: 180px;
+          
+}
+.img1{
+            width:25vw;
+            margin-bottom: 30px;
+            display: flex;
+        justify-content: center;
+            
+}
+.HeroP{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.aboutUsMain{
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 45px;
+        margin-right: 45px;
+        
+
+ }
+}
+
+
+@media (min-width: 1400px) {
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 60px;
+        /* Five cards per row on extra large screens */
+        
+        }
+        .img2{
+            width:25vw;
+            margin-bottom: 200px;
+}
+.img1{
+            width:25vw;
+            margin-bottom: 80px;
+            display: flex;
+        justify-content: center;
+            
+}
+.HeroP{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+ }
+
+
+
+
+/* Media query for phones */
+
+
+       .img2{
+                        width:25vw;
+
+            }
+        .img1{
+                        width:25vw;
+                        margin-bottom: 30px;
+                        
+            }
+        .HeroP{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .aboutUs{
+            width: 80em;
+            height: auto;
+            padding: 1rem;
+            background-color:#01031b ;
+            color: #ffffff;
+            
+            opacity: 0.70;
+            border-radius: 15px;
+            border: dashed rgb(128, 95, 230);
+
+        } 
+
+        .aboutUsMain{
+            display: flex;
+            margin-bottom: 100px;
+            justify-content: center;
+        }
+        
+        .miniHeading{
+            display: flex;
+            justify-content: center;
+            
+        }
+
+       
+
+       
+
+        .contact-form {
+            border: 2px dashed rgb(128, 95, 230);
+            padding: 20px;
+            width: 80em;
+            
+            background-color:#01031b;
+            
+            border-radius: 10px;
+        }
+        .contact-form label {
+            font-weight: bold;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 2px dashed rgb(128, 95, 230);
+
+        }
+        .contact-form input[type="submit"] {
+            background-color: #805FE6;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .headingStu{
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            z-index: 1;
+           
+        }
+
+        .image-container img{
+            height: 20vh;
+        }
+        .image-container{
+            display: flex;
+            justify-content: center;
+        }
+
+      
+    </style>
+</head>
+<body>
+    
+        <header>
+            <nav>
+                <ul>
+                    <li ><a href="index.html">Home</a></li>
+                    <li ><a href="#data-structures-section">Topics</a></li>
+                    <li ><a href="#About-us-section">About</a></li>
+                    <li ><a href="#contact-form">Contact</a></li>
+                    <!-- <li ><a href="login.html">Admin</a></li> -->
+                    
+                </ul>
+            </nav>
+    
+           
+            </header>
+    
+    <main>
+        <h1>Welcome to Your Data Structures Learning Platform </h1>
+        
+        
+    </main>
+    <div class="HeroP">
+     
+     <img class="img2" src="Hero.png" alt="#">
+    </div>
+        
+    <div class="cards" id="data-structures-section">
+        <!-- <div class="card"> -->
+            <div class="card text-bg-dark mb-3" accesskey="Arrays" style="width: 18rem;">
+                <img src="array.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Arrays</h5>
+                  <p class="card-text">An array is a data structure that stores a collection of elements of the same data type in a contiguous memory location, typically accessed by an index or position.</p>
+                  <a href="Array.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+            <div class="card text-bg-dark mb-3" accesskey="Strings" style="width: 18rem;">
+                <img src="string.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Strings</h5>
+                  <p class="card-text">A string is a sequence of characters, typically used to represent and manipulate text, enclosed within single or double quotes in programming languages.</p>
+                  <a href="String.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+            <div class="card text-bg-dark mb-3" accesskey="LinkedList" style="width: 18rem;">
+                <img src="linked.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">LinkedList</h5>
+                  <p class="card-text">Linked list: A linear data structure where each element (node) points to the next element, forming a sequence.</p>
+                  <a href="Linkedlist.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+            <div class="card text-bg-dark mb-3" accesskey="Stack" style="width: 18rem;">
+                <img src="stack.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Stack</h5>
+                  <p class="card-text">Stack: An abstract data type that follows the Last-In-First-Out (LIFO) principle for element access, making it useful for managing function calls, undo operations, and more.</p>
+                  <a href="Stack.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+        <!-- </div>
+        <div class="card2"> -->
+            <div class="card text-bg-dark mb-3" accesskey="Queue" style="width: 18rem;">
+                <img src="queue.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Queue</h5>
+                  <p class="card-text">Queue: An abstract data type that follows the First-In-First-Out (FIFO) principle for element access, often used for managing tasks in a sequential manner.</p>
+                  <a href="Queue.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+            <div class="card text-bg-dark mb-3" accesskey="Shorting" style="width: 18rem;">
+                <img src="sorting.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Shorting</h5>
+                  <p class="card-text">Process of arranging elements in a specific order (e.g., ascending or descending) based on a defined criterion, making it easier to search, access, or process data efficiently.</p>
+                  <a href="Sorting.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+            <div class="card text-bg-dark mb-3" accesskey="Searching" style="width: 18rem;">
+                <img src="searching.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Searching</h5>
+                  <p class="card-text">Process of finding a specific element within a collection or data structure, typically by comparing the target element with the elements in the collection until a match is found.</p>
+                  <a href="Searching.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+            <div class="card text-bg-dark mb-3" accesskey="Quick-Short" style="width: 18rem;">
+                <img src="quick.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Quick-Short</h5>
+                  <p class="card-text">It works by selecting a 'pivot' element and partitioning the array into smaller subarrays, then recursively sorting these subarrays.</p>
+                  <a href="Quick.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+        <!-- </div>
+        <div class="card3"> -->
+            <div class="card text-bg-dark mb-3" accesskey="Merge-sort" style="width: 18rem;">
+                <img src="merge.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Merge-sort</h5>
+                  <p class="card-text">A divide-and-conquer sorting algorithm that divides an unsorted list into equal halves.</p>
+                  <a href="Merge.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+            <div class="card text-bg-dark mb-3" accesskey="Heap-sort" style="width: 18rem;">
+                <img src="heap.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Heap-sort</h5>
+                  <p class="card-text">A comparison-based sorting algorithm that first converts the input array into a binary heap data structure.</p>
+                  <a href="Heap.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+            <div class="card text-bg-dark mb-3" accesskey="Recursion" style="width: 18rem;">
+                <img src="recursion.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Recursion</h5>
+                  <p class="card-text">A technique where a function calls itself in order to solve a problem. </p>
+                  <a href="Recursion.html" class="btn btn-primary">Learn more</a>
+                </div>
+              </div>
+            <div class="card text-bg-dark mb-3" accesskey="Dynamic-programming" style="width: 18rem;">
+                <img src="dp.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Dynamic-programming</h5>
+                  <p class="card-text">A problem-solving technique to solve problems by breaking them down into smaller overlapping subproblems.</p>
+                  <a href="DP.html" class="btn btn-primary">Learn more</a>
+                </div>
+                <div class="container mt-5" id="card-container">
+                    <!-- Cards will be added here -->
+                </div>
+                
+            </div>
+          
+        
+    </div>
+
+    <div class="aboutUsMain"  id="About-us-section">
+        
+    <div class="aboutUs" >
+        <div class="miniHeading" >
+            <p><h2>About Us<h2></p>
+        </div>
+        
+        <h2>Welcome to Our Platform</h2>
+        <p>We are dedicated to providing students and aspiring professionals with comprehensive documentation on Programming, Data Structures, and Algorithms. Our goal is to empower individuals who wish to pursue a successful career in the dynamic and ever-evolving IT industry.</p>
+
+        <div class="image-container">
+            <img src="coding.png" alt="index.html">
+        </div>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to facilitate learning and skill development by offering high-quality educational content. We believe that a strong foundation in programming and a deep understanding of data structures and algorithms are essential for excelling in the IT industry. We are here to support your journey to mastery.</p>
+
+        <h2>What We Offer</h2>
+        <p>At our platform, you'll find a wealth of resources, including:</p>
+        <ul>
+            <li>Comprehensive tutorials on a wide range of programming languages.</li>
+            <li>In-depth explanations of fundamental and advanced data structures.</li>
+            <li>Thorough coverage of algorithms, from basic sorting techniques to complex problem-solving strategies.</li>
+            <li>Practical examples, code samples, and hands-on exercises to reinforce your learning.</li>
+            <li>Tips, tricks, and best practices from experienced professionals in the field.</li>
+        </ul>
+
+        <h2>Why Choose Us?</h2>
+        <p>We stand out as a reliable source of knowledge and guidance for the following reasons:</p>
+        <ul>
+            <li>Expertise: Our content is created by experienced developers and educators who are passionate about sharing their knowledge.</li>
+            <li>Structured Learning: We provide structured paths for beginners and advanced learners, allowing you to progress at your own pace.</li>
+            <li>Community: Join a community of like-minded individuals who are also on a journey to excel in IT.</li>
+            <li>Free Access: We believe that education should be accessible to all, so our content is freely available to anyone interested.</li>
+        </ul>
+
+    </div>
+    </div>
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 headingStu">
+           
+            <div class="contact-form" id="contact-form">
+                <form action="https://formspree.io/f/mzblodvq" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number:</label>
+                        <input type="tel" class="form-control mobile" name="mobile" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profession">Profession:</label>
+                        <input type="text" class="form-control profession" name="profession" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback">Feedback:</label>
+                        <textarea class="form-control feedback" name="feedback" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="HeroP">
+    <img class="img1" src="Hero2.webp" alt="">
+</div>
+        
+
+
+
+  
+    <div class="footer">
+        <p class="copyright">&copy; 2023 Your Data Structures Learning Platform. All Rights Reserved.</p>
+    </div> 
+    <script>
+        document.getElementById("login-button").addEventListener("click", function() {
+            // Hide the login and signup buttons after login
+            document.getElementById("login-button").style.display = "none";
+            document.getElementById("signup-button").style.display = "none";
+        });
+
+        document.getElementById("about-us-link").addEventListener("click", function() {
+            // Toggle the display of the "About Us" content
+            const aboutUsContent = document.getElementById("about-us-content");
+            aboutUsContent.style.display = aboutUsContent.style.display === "none" ? "block" : "none";
+        });
+
+          // Smooth scrolling for anchor links
+    const navLinks = document.querySelectorAll("nav a");
+
+    for (const link of navLinks) {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = e.target.getAttribute("#home-section").substring(1); // Remove the # symbol
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const offset = targetElement.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: offset,
+                    behavior: "smooth",
+                });
+            }
+        });
+    }
+
+    const aboutUs = document.querySelectorAll(aboutUs);
+
+    for (const link of aboutUs) {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = e.target.getAttribute("#home-section").substring(1); // Remove the # symbol
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const offset = targetElement.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: offset,
+                    behavior: "smooth",
+                });
+            }
+        });
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>

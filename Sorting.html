@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,500;1,600&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;1,400&display=swap" rel="stylesheet">
+    <title>Sorting Techniques</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Pacifico', cursive;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content:space-around;
+           margin-bottom: 40px;
+            
+         }
+ 
+         nav{
+             position: fixed;
+             
+             background-color: #282829;
+             width: 100%;
+             height: 60px;
+             margin-top: 0%;
+             
+             opacity: 0.55;
+             z-index: 2;
+         }
+         nav ul {
+             list-style: none;
+             display: flex;
+             margin-top: 15px;
+             justify-content:center;
+         }
+ 
+         nav li {
+             margin: 0 20px;
+         }
+ 
+         nav a {
+             text-decoration: none;
+             color: white;
+             font-weight: bold;
+         }
+
+        #container {
+            max-width: 800px;
+            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .topics {
+            background-color: #282829;
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .topic-link {
+            cursor: pointer;
+            color: green;
+            font-weight: bold;
+        }
+
+        .topic-content {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                
+                <li><a href="index.html">Home</a></li>
+             
+            </ul>
+        </nav>
+     
+    </header>
+    <div id="container">
+        <h2>What is Sorting?</h2>
+        <p>Sorting is a fundamental operation in computer science and programming that arranges a collection of elements in a specific order, typically in ascending or descending order. Sorting is essential for efficient data retrieval and manipulation.</p>
+
+        <div class="image-container">
+            <img src="sorting.jpg" alt="Sorting">
+        </div>
+
+        <h2>Topics in Sorting Techniques</h2>
+        <ul class="topics">
+            <li>
+                <span class="topic-link" onclick="toggleTopic('what-is-sorting')">What is Sorting?</span>
+                <div class="topic-content" id="what-is-sorting">
+                    <p>Sorting is the process of arranging elements in a specific order, such as ascending or descending. It is a critical operation in computer science and has numerous applications.</p>
+                </div>
+            </li>
+            <li>
+                <span class="topic-link" onclick="toggleTopic('sorting-algorithms')">Sorting Algorithms</span>
+                <div class="topic-content" id="sorting-algorithms">
+                    <p>There are various sorting algorithms, each with its unique characteristics and efficiency. Common sorting algorithms include:</p>
+                    <ul>
+                        <li>Selection Sort</li>
+                        <li>Bubble Sort</li>
+                        <li>Insertion Sort</li>
+                        <li>Merge Sort</li>
+                        <li>Quick Sort</li>
+                        <li>Heap Sort</li>
+                        <li>Counting Sort</li>
+                        <li>Radix Sort</li>
+                        <li>Bucket Sort</li>
+                        <li>Bingo Sort Algorithm</li>
+                        <li>ShellSort</li>
+                        <li>TimSort</li>
+                        <li>Comb Sort</li>
+                        <li>Pigeonhole Sort</li>
+                        <li>Cycle Sort</li>
+                        <li>Cocktail Sort</li>
+                        <li>Strand Sort</li>
+                        <li>Bitonic Sort</li>
+                        <li>Pancake sorting</li>
+                        <li>BogoSort or Permutation Sort</li>
+                        <li>Gnome Sort</li>
+                        <li>Sleep Sort – The King of Laziness</li>
+                        <li>Structure Sorting in C++</li>
+                        <li>Stooge Sort</li>
+                        <li>Tag Sort (To get both sorted and original)</li>
+                        <li>Tree Sort</li>
+                        <li>Odd-Even Sort / Brick Sort</li>
+                        <li>3-way Merge Sort</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <span class="topic-link" onclick="toggleTopic('complexity-analysis')">Complexity Analysis</span>
+                <div class="topic-content" id="complexity-analysis">
+                    <p>Sorting algorithms are evaluated based on their time and space complexity. Understanding these complexities is essential for selecting the right sorting algorithm for a specific task.</p>
+                </div>
+            </li>
+            <li>
+                <span class="topic-link" onclick="toggleTopic('advantages-of-sorting')">Advantages of Sorting</span>
+                <div class="topic-content" id="advantages-of-sorting">
+                    <p>Sorting allows for efficient searching and data retrieval. It is a fundamental operation for tasks like maintaining databases, generating reports, and more.</p>
+                </div>
+            </li>
+            <li>
+                <span class="topic-link" onclick="toggleTopic('disadvantages-of-sorting')">Disadvantages of Sorting</span>
+                <div class="topic-content" id="disadvantages-of-sorting">
+                    <p>Sorting can be computationally expensive, especially for large datasets. Selecting the wrong sorting algorithm can lead to performance issues.</p>
+                </div>
+            </li>
+            <li>
+                <span class="topic-link" onclick="toggleTopic('applications-of-sorting')">Applications of Sorting</span>
+                <div class="topic-content" id="applications-of-sorting">
+                    <p>Sorting is used in various applications, including searching, data analysis, database management, and more. It's a fundamental building block of many algorithms and systems.</p>
+            </li>
+            <li>
+                <span class="topic-link" onclick="toggleTopic('important-points')">Important Points</span>
+                <div class="topic-content" id="important-points">
+                    <p>Sorting is a key operation with real-world applications, and it's crucial for software development and problem-solving.</p>
+            </li>
+            <li>
+                <span class="topic-link" onclick="toggleTopic('conclusion')">Conclusion</span>
+                <div class="topic-content" id="conclusion">
+                    <p>Sorting is essential in computer science, and understanding different sorting algorithms and their complexities is vital for efficient data manipulation and problem-solving.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <h2>Complexity Comparison</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Best Case</th>
+            <th>Average Case</th>
+            <th>Worst Case</th>
+            <th>Memory</th>
+            <th>Stable</th>
+            <th>Method Used</th>
+        </tr>
+        <tr>
+            <td>Quick Sort</td>
+            <td>n log n</td>
+            <td>n log n</td>
+            <td>n^2</td>
+            <td>log n</td>
+            <td>No</td>
+            <td>Partitioning</td>
+        </tr>
+        <tr>
+            <td>Merge Sort</td>
+            <td>n log n</td>
+            <td>n log n</td>
+            <td>n log n</td>
+            <td>n</td>
+            <td>Yes</td>
+            <td>Merging</td>
+        </tr>
+        <tr>
+            <td>Heap Sort</td>
+            <td>n log n</td>
+            <td>n log n</td>
+            <td>n log n</td>
+            <td>1</td>
+            <td>No</td>
+            <td>Selection</td>
+        </tr>
+        <tr>
+            <td>Insertion Sort</td>
+            <td>n</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>1</td>
+            <td>Yes</td>
+            <td>Insertion</td>
+        </tr>
+        <tr>
+            <td>Tim Sort</td>
+            <td>n</td>
+            <td>n log n</td>
+            <td>n log n</td>
+            <td>n</td>
+            <td>Yes</td>
+            <td>Insertion & Merging</td>
+        </tr>
+        <tr>
+            <td>Selection Sort</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>1</td>
+            <td>No</td>
+            <td>Selection</td>
+        </tr>
+        <tr>
+            <td>Shell Sort</td>
+            <td>n log n</td>
+            <td>n^(4/3)</td>
+            <td>n^(3/2)</td>
+            <td>1</td>
+            <td>No</td>
+            <td>Insertion</td>
+        </tr>
+        <tr>
+            <td>Bubble Sort</td>
+            <td>n</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>1</td>
+            <td>Yes</td>
+            <td>Exchanging</td>
+        </tr>
+        <tr>
+            <td>Tree Sort</td>
+            <td>n log n</td>
+            <td>n log n</td>
+            <td>n log n</td>
+            <td>n</td>
+            <td>Yes</td>
+            <td>Insertion</td>
+        </tr>
+        <tr>
+            <td>Cycle Sort</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>1</td>
+            <td>No</td>
+            <td>Selection</td>
+        </tr>
+        <tr>
+            <td>Strand Sort</td>
+            <td>n</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>n</td>
+            <td>Yes</td>
+            <td>Selection</td>
+        </tr>
+        <tr>
+            <td>Cocktail Shaker Sort</td>
+            <td>n</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>1</td>
+            <td>Yes</td>
+            <td>Exchanging</td>
+        </tr>
+        <tr>
+            <td>Comb Sort</td>
+            <td>n log n</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>1</td>
+            <td>No</td>
+            <td>Exchanging</td>
+        </tr>
+        <tr>
+            <td>Gnome Sort</td>
+            <td>n</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>1</td>
+            <td>Yes</td>
+            <td>Exchanging</td>
+        </tr>
+        <tr>
+            <td>Odd–even Sort</td>
+            <td>n</td>
+            <td>n^2</td>
+            <td>n^2</td>
+            <td>1</td>
+            <td>Yes</td>
+            <td>Exchanging</td>
+        </tr>
+    </table>
+    
+    <script>
+        function toggleTopic(topicId) {
+            var topicContent = document.getElementById(topicId);
+            if (topicContent.style.display === "none" || topicContent.style.display === "") {
+                topicContent.style.display = "block";
+            } else {
+                topicContent.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

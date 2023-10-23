@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,500;1,600&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;1,400&display=swap" rel="stylesheet">
+    <title>Merge Sort - Data Structure and Algorithms Tutorials</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            family: 'Pacifico', cursive;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        nav {
+            position: fixed;
+            background-color: #282829;
+            width: 100%;
+            height: 60px;
+            margin-top: 0%;
+            opacity: 0.55;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        #container {
+            max-width: 800px;
+            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .topics {
+            background-color: #282829;
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .topic-link {
+            cursor: pointer;
+            color: green;
+            font-weight: bold;
+        }
+
+        .topic-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #282829;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="searching.html">Searching Algorithm</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <h2>Merge Sort - Data Structure and Algorithms Tutorials</h2>
+        <p>Merge sort is defined as a sorting algorithm that works by dividing an array into smaller subarrays, sorting each subarray, and then merging the sorted subarrays back together to form the final sorted array.</p>
+
+        <p>In simple terms, we can say that the process of merge sort is to divide the array into two halves, sort each half, and then merge the sorted halves back together. This process is repeated until the entire array is sorted.</p>
+
+        <div class="image-container">
+            <img src="merge.jpg" alt="Merge Sort Algorithm">
+        </div>
+
+        <h2>How does Merge Sort work?</h2>
+        <p>Merge sort is a recursive algorithm that continuously splits the array in half until it cannot be further divided, i.e., the array has only one element left (an array with one element is always sorted). Then the sorted subarrays are merged into one sorted array.</p>
+
+        <h2>Complexity Analysis of Merge Sort:</h2>
+        <p><strong>Time Complexity:</strong> O(N log(N)) - Merge Sort is a recursive algorithm and time complexity can be expressed as following recurrence relation.</p>
+
+        <p>T(n) = 2T(n/2) + θ(n)</p>
+
+        <p>The above recurrence can be solved either using the Recurrence Tree method or the Master method. It falls in case II of the Master Method, and the solution of the recurrence is θ(N log(N)). The time complexity of Merge Sort is θ(N log(N)) in all 3 cases (worst, average, and best) as Merge Sort always divides the array into two halves and takes linear time to merge two halves.</p>
+
+        <p><strong>Auxiliary Space:</strong> O(N) - In Merge Sort, all elements are copied into an auxiliary array. So, N auxiliary space is required for Merge Sort.</p>
+
+        <h2>Applications of Merge Sort:</h2>
+        <ul>
+            <li>Sorting large datasets: Merge sort is particularly well-suited for sorting large datasets due to its guaranteed worst-case time complexity of O(n log n).</li>
+            <li>External sorting: Merge sort is commonly used in external sorting, where the data to be sorted is too large to fit into memory.</li>
+            <li>Custom sorting: Merge sort can be adapted to handle different input distributions, such as partially sorted, nearly sorted, or completely unsorted data.</li>
+            <li>Inversion Count Problem</li>
+        </ul>
+
+        <h2>Advantages of Merge Sort:</h2>
+        <ul>
+            <li>Stability: Merge sort is a stable sorting algorithm, which means it maintains the relative order of equal elements in the input array.</li>
+            <li>Guaranteed worst-case performance: Merge sort has a worst-case time complexity of O(N log(N)), which means it performs well even on large datasets.</li>
+            <li>Parallelizable: Merge sort is a naturally parallelizable algorithm, which means it can be easily parallelized to take advantage of multiple processors or threads.</li>
+        </ul>
+
+        <h2>Drawbacks of Merge Sort:</h2>
+        <ul>
+            <li>Space complexity: Merge sort requires additional memory to store the merged sub-arrays during the sorting process.</li>
+            <li>Not in-place: Merge sort is not an in-place sorting algorithm, which means it requires additional memory to store the sorted data. This can be a disadvantage in applications where memory usage is a concern.</li>
+            <li>Not always optimal for small datasets: For small datasets, Merge sort has a higher time complexity than some other sorting algorithms, such as insertion sort. This can result in slower performance for very small datasets.</li>
+        </ul>
+
+        <h2>Comparison of Merge Sort, Quick Sort, and Bubble Sort</h2>
+<table>
+    <tr>
+        <th>Sorting Algorithm</th>
+        <th>Time Complexity</th>
+        <th>Space Complexity</th>
+        <th>Stability</th>
+        <th>Applications</th>
+    </tr>
+    <tr>
+        <td>Merge Sort</td>
+        <td>O(N log(N))</td>
+        <td>O(N)</td>
+        <td>Stable</td>
+        <td>Sorting large datasets, external sorting, custom sorting, inversion count problem</td>
+    </tr>
+    <tr>
+        <td>Quick Sort</td>
+        <td>O(N^2) (worst case), O(N log(N)) (average case)</td>
+        <td>O(log(N)) (worst case), O(N) (average case)</td>
+        <td>Not stable</td>
+        <td>General-purpose sorting, widely used in practice</td>
+    </tr>
+    <tr>
+        <td>Bubble Sort</td>
+        <td>O(N^2)</td>
+        <td>O(1)</td>
+        <td>Stable</td>
+        <td>Not suitable for large datasets, primarily used for educational purposes</td>
+    </tr>
+</table>
+
+
+<h2>Top 20 Interview Questions on Merge Sort</h2>
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Difficulty Level</th>
+    </tr>
+    <tr>
+        <td>What is Merge Sort, and how does it work?</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>Explain the time complexity of Merge Sort.</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>What is the space complexity of Merge Sort?</td>
+        <td>Beginner</td>
+    </tr>
+    <tr>
+        <td>What are the advantages of using Merge Sort?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>What are the drawbacks of Merge Sort?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>Explain the stability of Merge Sort.</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>How is Merge Sort different from Quick Sort?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>What are the applications of Merge Sort?</td>
+        <td>Intermediate</td>
+    </tr>
+    <tr>
+        <td>Explain the concept of in-place sorting and whether Merge Sort is in-place.</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>What is external sorting, and how is Merge Sort used in it?</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>Can Merge Sort be used for sorting large datasets in external memory?</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        td>How does Merge Sort perform on small datasets compared to other sorting algorithms?</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>Explain the inversion count problem and how Merge Sort can be used to solve it.</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>Discuss the parallelizability of Merge Sort.</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>What is the primary drawback of Merge Sort in terms of space complexity?</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>How does Merge Sort compare to other sorting algorithms in terms of time complexity?</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>Explain the scenario where Merge Sort is not the optimal choice.</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>Can Merge Sort be adapted to handle different input distributions?</td>
+        <td>Advanced</td>
+    </tr>
+    <tr>
+        <td>How is the pivot element chosen in the Quick Sort algorithm?</td>
+        <td>Advanced</td>
+    </tr>
+</table>
+
+    </div>
+</body>
+</html>

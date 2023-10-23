@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Introduction to Recursion</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            family: 'Pacifico', cursive;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+         
+            
+          
+        }
+
+        .container {
+            background-color: #000000; /* Page background color */
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+        }
+
+        
+        header {
+            display: flex;
+            justify-content:space-around;
+           margin-bottom: 40px;
+            
+         }
+ 
+         nav{
+             position: fixed;
+             
+             background-color: #282829;
+             width: 100%;
+             height: 60px;
+             margin-top: 0%;
+             
+             opacity: 0.55;
+             z-index: 2;
+         }
+         nav ul {
+             list-style: none;
+             display: flex;
+             margin-top: 15px;
+             justify-content:center;
+         }
+ 
+         nav li {
+             margin: 0 20px;
+         }
+ 
+         nav a {
+             text-decoration: none;
+             color: white;
+             font-weight: bold;
+         }
+
+      
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                
+                <li><a href="index.html">Home</a></li>
+             
+            </ul>
+        </nav>
+     
+    </header>
+    <div class="container">
+        <h1>Introduction to Recursion</h1>
+        <p><strong>What is Recursion?</strong></p>
+        <p>The process in which a function calls itself directly or indirectly is called recursion, and the corresponding function is called a recursive function. Using a recursive algorithm, certain problems can be solved quite easily. Examples of such problems are Towers of Hanoi (TOH), Inorder/Preorder/Postorder Tree Traversals, DFS of Graph, etc. A recursive function solves a particular problem by calling a copy of itself and solving smaller subproblems of the original problems. Many more recursive calls can be generated as and when required. It is essential to know that we should provide a certain case in order to terminate this recursion process. So we can say that every time the function calls itself with a simpler version of the original problem.</p>
+
+        <div class="image-container">
+            <img src="recursion.jpg" alt="Merge Sort Algorithm">
+        </div>
+
+        <p><strong>Need of Recursion</strong></p>
+        <p>Recursion is an amazing technique with the help of which we can reduce the length of our code and make it easier to read and write. It has certain advantages over the iteration technique which will be discussed later. A task that can be defined with its similar subtask, recursion is one of the best solutions for it. For example; The Factorial of a number.</p>
+
+        <p><strong>Properties of Recursion:</strong></p>
+        <ul>
+            <li>Performing the same operations multiple times with different inputs.</li>
+            <li>In every step, we try smaller inputs to make the problem smaller.</li>
+            <li>Base condition is needed to stop the recursion, otherwise an infinite loop will occur.</li>
+        </ul>
+
+        <p><strong>Algorithm: Steps</strong></p>
+        <ol>
+            <li><strong>Define a base case:</strong> Identify the simplest case for which the solution is known or trivial. This is the stopping condition for the recursion, as it prevents the function from infinitely calling itself.</li>
+            <li><strong>Define a recursive case:</strong> Define the problem in terms of smaller subproblems. Break the problem down into smaller versions of itself, and call the function recursively to solve each subproblem.</li>
+            <li><strong>Ensure the recursion terminates:</strong> Make sure that the recursive function eventually reaches the base case, and does not enter an infinite loop.</li>
+            <li><strong>Combine the solutions:</strong> Combine the solutions of the subproblems to solve the original problem.</li>
+        </ol>
+
+        <p><strong>A Mathematical Interpretation</strong></p>
+        <p>Let us consider a problem that a programmer has to determine the sum of the first n natural numbers. There are several ways of doing that, but the simplest approach is simply to add the numbers starting from 1 to n. So the function simply looks like this:</p>
+
+        <pre>f(n) = 1 + 2 + 3 + … n</pre>
+
+        <p>But there is another mathematical approach of representing this:</p>
+
+        <pre>f(n) = 1                  n=1</pre>
+        <pre>f(n) = n + f(n-1)    n>1</pre>
+
+        <p>There is a simple difference between the two approaches, and that is in the second approach, the function "f()" itself is being called inside the function, so this phenomenon is named recursion, and the function containing recursion is called a recursive function. At the end, this is a great tool in the hands of programmers to code some problems in a lot easier and efficient way.</p>
+
+        <p><strong>How are recursive functions stored in memory?</strong></p>
+        <p>Recursion uses more memory because the recursive function adds to the stack with each recursive call and keeps the values there until the call is finished. The recursive function uses the Last In First Out (LIFO) structure just like the stack data structure.</p>
+        <p>For more information, see: <a href="https://www.geeksforgeeks.org/stack-data-structure/">Stack Data Structure</a></p>
+
+        <p><strong>What is the base condition in recursion?</strong></p>
+        <p>In the recursive program, the solution to the base case is provided, and the solution to the bigger problem is expressed in terms of smaller problems.</p>
+        <pre>
+        int fact(int n)
+        {
+            if (n <= 1) // base case
+                return 1;
+            else    
+                return n * fact(n-1);    
+        }
+        </pre>
+        <p>In the above example, the base case for n <= 1 is defined, and the larger value of a number can be solved by converting it to a smaller one until the base case is reached.</p>
+
+        <p><strong>How is a particular problem solved using recursion?</strong></p>
+        <p>The idea is to represent a problem in terms of one or more smaller problems and add one or more base conditions that stop the recursion. For example, we compute factorial n if we know the factorial of (n-1). The base case for factorial would be n = 0. We return 1 when n = 0.</p>
+
+        <p><strong>Why does a Stack Overflow error occur in recursion?</strong></p>
+        <p>If the base case is not reached or not defined, then the stack overflow problem may arise. Let us take an example to understand this:</p>
+        <pre>
+        int fact(int n)
+        {
+            // wrong base case (it may cause
+            // stack overflow).
+            if (n == 100) 
+                return 1;
+            else
+                return n * fact(n-1);
+        }
+        </pre>
+        <p>If fact(10) is called, it will call fact(9), fact(8), fact(7), and so on, but the number will never reach 100. So, the base case is not reached. If the memory is exhausted by these functions on the stack, it will cause a stack overflow error.</p>
+
+        <p><strong>What is the difference between direct and indirect recursion?</strong></p>
+        <p>A function is called direct recursive if it calls the same function. A function is called indirect recursive if it calls another function, say fun_new, and fun_new calls the original function directly or indirectly.</p>
+        <pre>
+        // An example of direct recursion
+        void directRecFun()
+        {
+            // Some code....
+
+            directRecFun();
+
+            // Some code...
+        }
+
+        // An example of indirect recursion
+        void indirectRecFun1()
+        {
+            // Some code....
+
+            indirectRecFun2();
+
+            // Some code...
+        }
+        void indirectRecFun2()
+        {
+            // Some code....
+
+            indirectRecFun1();
+
+            // Some code...
+        }
+        </pre>
+
+        <p><strong>What is the difference between tailed and non-tailed recursion?</strong></p>
+        <p>A recursive function is tail recursive when a recursive call is the last thing executed by the function. Please refer to the <a href="#">tail recursion article</a> for details.</p>
+
+        <p><strong>How is memory allocated to different function calls in recursion?</strong></p>
+        <p>When any function is called from main(), the memory is allocated to it on the stack. A recursive function calls itself, and the memory for a called function is allocated on top of the memory allocated to the calling function, creating a different copy of local variables for each function call.</p>
+        <p>For more information, see: <a href="#">Stack Data Structure</a></p>
+
+        <h2>Recursion vs. Iteration</h2>
+
+<table>
+    <tr>
+        <th>SR No.</th>
+        <th>Recursion</th>
+        <th>Iteration</th>
+    </tr>
+    <tr>
+        <td>1)</td>
+        <td>Terminates when the base case becomes true.</td>
+        <td>Terminates when the condition becomes false.</td>
+    </tr>
+    <tr>
+        <td>2)</td>
+        <td>Used with functions.</td>
+        <td>Used with loops.</td>
+    </tr>
+    <tr>
+        <td>3)</td>
+        <td>Every recursive call needs extra space in the stack memory.</td>
+        <td>Every iteration does not require any extra space.</td>
+    </tr>
+    <tr>
+        <td>4)</td>
+        <td>Smaller code size.</td>
+        <td>Larger code size.</td>
+    </tr>
+</table>
+
+<h2>Advantages and Disadvantages of Recursive Programming</h2>
+
+<h3>Disadvantages of Recursive Programming</h3>
+<p>
+    Note that both recursive and iterative programs have the same problem-solving powers, i.e., every recursive program can be written iteratively and vice versa is also true. The recursive program has greater space requirements than the iterative program as all functions will remain in the stack until the base case is reached. It also has greater time requirements because of function calls and returns overhead. Moreover, due to the smaller length of code, the codes are difficult to understand, and extra care has to be practiced while writing the code. The computer may run out of memory if the recursive calls are not properly checked.
+</p>
+
+<h3>Advantages of Recursive Programming</h3>
+<p>
+    Recursion provides a clean and simple way to write code. Some problems are inherently recursive like tree traversals, Tower of Hanoi, etc. For such problems, it is preferred to write recursive code. We can write such codes also iteratively with the help of a stack data structure. For example, refer to Inorder Tree Traversal without Recursion, Iterative Tower of Hanoi.
+</p>
+
+<h2>Summary of Recursion</h2>
+
+<ul>
+    <li>There are two types of cases in recursion, i.e., recursive case and a base case.</li>
+    <li>The base case is used to terminate the recursive function when the case turns out to be true.</li>
+    <li>Each recursive call makes a new copy of that method in the stack memory.</li>
+    <li>Infinite recursion may lead to running out of stack memory.</li>
+    <li>Examples of Recursive algorithms: Merge Sort, Quick Sort, Tower of Hanoi, Fibonacci Series, Factorial Problem, etc.</li>
+</ul>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,500;1,600&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;1,400&display=swap" rel="stylesheet">
+    <title>Heap Sort - Data Structures and Algorithms Tutorials</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Pacifico', cursive;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        nav {
+            position: fixed;
+            background-color: #282829;
+            width: 100%;
+            height: 60px;
+            margin-top: 0%;
+            opacity: 0.55;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        #container {
+            max-width: 800px;
+            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .topics {
+            background-color: #282829;
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .topic-link {
+            cursor: pointer;
+            color: green;
+            font-weight: bold;
+        }
+
+        .topic-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #282829;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <h1>Heap Sort</h1>
+        <p>Heap sort is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.</p>
+
+        <h2>Heap Sort Algorithm</h2>
+        <p>To solve the problem, follow the below idea:</p>
+        <ol>
+            <li>First convert the array into a heap data structure using heapify.</li>
+            <li>Then, one by one, delete the root node of the Max-heap and replace it with the last node in the heap.</li>
+            <li>Heapify the root of the heap.</li>
+            <li>Repeat this process until the size of the heap is greater than 1.</li>
+        </ol>
+
+        <h2>Build a heap from the given input array.</h2>
+        <p>Repeat the following steps until the heap contains only one element:</p>
+        <ol>
+            <li>Swap the root element of the heap (which is the largest element) with the last element of the heap.</li>
+            <li>Remove the last element of the heap (which is now in the correct position).</li>
+            <li>Heapify the remaining elements of the heap.</li>
+        </ol>
+
+        <p>The sorted array is obtained by reversing the order of the elements in the input array.</p>
+
+        <h2>Complexity Analysis of Heap Sort</h2>
+        <table>
+            <tr>
+                <th>Complexity</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Time Complexity</td>
+                <td>O(N log N)</td>
+            </tr>
+            <tr>
+                <td>Auxiliary Space</td>
+                <td>O(log N) (recursive), O(1) (iterative)</td>
+            </tr>
+        </table>
+
+        <h2>Important points about Heap Sort:</h2>
+        <ul>
+            <li>Heap sort is an in-place algorithm.</li>
+            <li>Its typical implementation is not stable but can be made stable.</li>
+            <li>Typically 2-3 times slower than well-implemented QuickSort. The reason for slowness is a lack of locality of reference.</li>
+        </ul>
+
+        <h2>Advantages of Heap Sort:</h2>
+        <ul>
+            <li>Efficient Time Complexity: Heap Sort has a time complexity of O(N log N) in all cases, making it efficient for sorting large datasets.</li>
+            <li>Memory Usage: Memory usage can be minimal because it needs no additional memory space to work.</li>
+            <li>Simplicity: It is simpler to understand than other equally efficient sorting algorithms because it does not use advanced computer science concepts like recursion.</li>
+        </ul>
+
+        <h2>Disadvantages of Heap Sort:</h2>
+        <ul>
+            <li>Costly: Heap sort is costly.</li>
+            <li>Unstable: Heap sort is unstable; it might rearrange the relative order.</li>
+            <li>Efficient: Heap Sort is not very efficient when working with highly complex data.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions Related to Heap Sort</h2>
+        <ol>
+            <li><strong>Q1. What are the two phases of Heap Sort?</strong></li>
+            <p>The heap sort algorithm consists of two phases. In the first phase, the array is converted into a max heap. In the second phase, the highest element is removed (i.e., the one at the tree root) and the remaining elements are used to create a new max heap.</p>
+            
+            <li><strong>Q2. Why Heap Sort is not stable?</strong></li>
+            <p>The heap sort algorithm is not a stable algorithm. This algorithm is not stable because the operations that are performed in a heap can change the relative ordering of the equivalent keys.</p>
+            
+            <li><strong>Q3. Is Heap Sort an example of the “Divide and Conquer” algorithm?</strong></li>
+            <p>Heap sort is NOT at all a Divide and Conquer algorithm. It uses a heap data structure to efficiently sort its elements and not a “divide and conquer approach” to sort the elements.</p>
+            
+            <li><strong>Q4. Which sorting algorithm is better – Heap sort or Merge Sort?</strong></li>
+            <p>The answer lies in the comparison of their time complexity and space requirements. The Merge sort is slightly faster than the Heap sort. But, on the other hand, merge sort takes extra memory. Depending on the requirement, one should choose which one to use.</p>
+            
+            <li><strong>Q5. Why is Heap sort better than Selection sort?</strong></li>
+            <p>Heap sort is similar to selection sort, but with a better way to get the maximum element. It takes advantage of the heap data structure to get the maximum element in constant time.</p>
+        </ol>
+
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Difficulty</th>
+            </tr>
+            <tr>
+                <td>What is Heap Sort, and how does it work?</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Explain the two phases of Heap Sort.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Why is Heap Sort not considered a stable sorting algorithm?</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>Compare the time complexity of Heap Sort and Merge Sort.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>How does Heap Sort utilize the heap data structure for sorting?</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>What are the advantages of using Heap Sort?</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>Explain the memory usage of Heap Sort.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Discuss the typical speed of Heap Sort compared to QuickSort.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Is Heap Sort an in-place sorting algorithm?</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>How can Heap Sort be made stable?</td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>What is the time complexity of Heap Sort?</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>Explain the concept of a max heap and its role in Heap Sort.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>How does Heap Sort maintain relative ordering?</td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>What are the steps involved in the Heap Sort algorithm?</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Compare Heap Sort and Selection Sort.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Why is Heap Sort considered efficient for sorting large datasets?</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>Explain the concept of heapify in Heap Sort.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>What are the situations where Heap Sort is a good choice for sorting?</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Discuss the memory space requirements of Heap Sort.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Is Heap Sort suitable for highly complex data?</td>
+                <td>Easy</td>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+</html>

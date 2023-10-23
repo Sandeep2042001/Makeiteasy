@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            family: 'Pacifico', cursive;
+            font-family: 'Poppins', sans-serif;
+            
+            margin: 0;
+            padding: 0;
+            background-image: url('homedp.png'); /* Background image URL */
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: repeat;
+            color: #fff; /* Light text color */
+
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #01031b;
+            border-radius: 5px;
+            opacity: .90;
+            border: dashed rgb(128, 95, 230);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="login-container">
+            <h2 class="text-center">Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control username1" id="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control password1" id="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block button">Login</button>
+            </form>
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        let username = document.querySelector(".username1");
+        let btn = document.querySelector(".button");
+        let password = document.querySelector(".password1");
+
+
+        btn.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the form submission (since you're not using a form)
+        
+            if (username.value === "admin.us.dsa.8955.website" && password.value === "@admin.us.dsa.8955") {
+                window.location.href = 'Admin.html';
+            } else if (username.value === "" || password.value === "") {
+                alert("Please fill out all fields!");
+            } else {
+                alert("Please enter correct details");
+            }
+        });
+        
+
+                    
+</script>
+</body>
+</html>

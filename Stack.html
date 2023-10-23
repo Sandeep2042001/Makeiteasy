@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,500;1,600&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;1,400&display=swap" rel="stylesheet">
+    <title>Stack Data Structure</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            family: 'Pacifico', cursive;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+        }
+
+        header {
+            display: flex;
+            justify-content:space-around;
+           margin-bottom: 40px;
+            
+         }
+ 
+         nav{
+             position: fixed;
+             
+             background-color: #282829;
+             width: 100%;
+             height: 60px;
+             margin-top: 0%;
+             
+             opacity: 0.55;
+             z-index: 2;
+         }
+         nav ul {
+             list-style: none;
+             display: flex;
+             margin-top: 15px;
+             justify-content:center;
+         }
+ 
+         nav li {
+             margin: 0 20px;
+         }
+ 
+         nav a {
+             text-decoration: none;
+             color: white;
+             font-weight: bold;
+         }
+
+        #container {
+            max-width: 800px;
+            color: #fff;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .topics {
+            background-color: #282829;
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .topic-link {
+            cursor: pointer;
+            color: green;
+            font-weight: bold;
+        }
+
+        .topic-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #282829;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                
+                <li><a href="index.html">Home</a></li>
+             
+            </ul>
+        </nav>
+     
+    </header>
+    <div id="container">
+        <h2>What is Stack?</h2>
+        <p>A stack is a linear data structure in which the insertion of a new element and removal of an existing element takes place at the same end represented as the top of the stack.</p>
+
+        <p>To implement the stack, it is required to maintain the pointer to the top of the stack, which is the last element to be inserted because we can access the elements only on the top of the stack.</p>
+
+        <p><strong>LIFO (Last In First Out):</strong> This strategy states that the element that is inserted last will come out first. You can take a pile of plates kept on top of each other as a real-life example. The plate which we put last is on the top, and since we remove the plate that is at the top, we can say that the plate that was put last comes out first.</p>
+
+        <div class="image-container">
+            <img src="stack.png" alt="Stack">
+        </div>
+
+        <div class="topics">
+            <h2>Topics:</h2>
+            <ul>
+                <li>
+                    <span class="topic-link" onclick="toggleTopic('basic-operations')">Basic Operations on Stack</span>
+                    <div class="topic-content" id="basic-operations">
+                        <p><strong>Basic Operations on Stack:</strong> In order to make manipulations in a stack, there are certain operations provided to us.</p>
+                        <ul>
+                            <li><strong>push():</strong> Inserts an element into the stack.</li>
+                            <li><strong>pop():</strong> Removes an element from the stack.</li>
+                            <li><strong>top():</strong> Returns the top element of the stack.</li>
+                            <li><strong>isEmpty():</strong> Returns true if the stack is empty; otherwise, false.</li>
+                            <li><strong>size():</strong> Returns the size of the stack.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <span class="topic-link" onclick="toggleTopic('understanding-stack')">Understanding Stack Practically</span>
+                    <div class="topic-content" id="understanding-stack">
+                        <p><strong>Understanding stack practically:</strong> There are many real-life examples of a stack. Consider the simple example of plates stacked over one another in a canteen. The plate which is at the top is the first one to be removed, i.e. the plate which has been placed at the bottommost position remains in the stack for the longest period of time. So, it can be simply seen to follow the LIFO/FILO order.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="topic-link" onclick="toggleTopic('complexity-analysis')">Complexity Analysis</span>
+                    <div class="topic-content" id="complexity-analysis">
+                        <p><strong>Complexity Analysis:</strong> Time Complexity</p>
+                        <table>
+                            <tr>
+                                <th>Operations</th>
+                                <th>Complexity</th>
+                            </tr>
+                            <tr>
+                                <td>push()</td>
+                                <td>O(1)</td>
+                            </tr>
+                            <tr>
+                                <td>pop()</td>
+                                <td>O(1)</td>
+                            </tr>
+                            <tr>
+                                <td>isEmpty()</td>
+                                <td>O(1)</td>
+                            </tr>
+                            <tr>
+                                <td>size()</td>
+                                <td>O(1)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <span class="topic-link" onclick="toggleTopic('types-of-stacks')">Types of Stacks</span>
+                    <div class="topic-content" id="types-of-stacks">
+                        <p><strong>Types of Stacks:</strong></p>
+                        <ul>
+                            <li><strong>Fixed Size Stack:</strong> As the name suggests, a fixed size stack has a fixed size and cannot grow or shrink dynamically. If the stack is full and an attempt is made to add an element to it, an overflow error occurs. If the stack is empty and an attempt is made to remove an element from it, an underflow error occurs.</li>
+                            <li><strong>Dynamic Size Stack:</strong> A dynamic size stack can grow or shrink dynamically. When the stack is full, it automatically increases its size to accommodate the new element, and when the stack is empty, it decreases its size. This type of stack is implemented using a linked list, as it allows for easy resizing of the stack.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <span class="topic-link" onclick="toggleTopic('applications')">Applications of the Stack</span>
+                    <div class="topic-content" id="applications">
+                        <p><strong>Applications of the stack:</strong></p>
+                        <ul>
+                            <li>Infix to Postfix / Prefix conversion</li>
+                            <li>Redo-undo features at many places like editors, Photoshop.</li>
+                            <li>Forward and backward features in web browsers</li>
+                            <li>Used in many algorithms like Tower of Hanoi, tree traversals, stock span problems, and histogram problems.</li>
+                            <li>Backtracking is one of the algorithm designing techniques.</li>
+                            <li>In Graph Algorithms like Topological Sorting and Strongly Connected Components</li>
+                            <li>In Memory management, any modern computer uses a stack as the primary management for a running purpose.</li>
+                            <li>String reversal is also another application of the stack.</li>
+                            <li>Stacks are also used to implement the undo/redo operation in a text editor.</li>
+                            <li>Implementation of Stack:</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <span class="topic-link" onclick="toggleTopic('implementation-of-stack')">Implementation of Stack</span>
+                    <div class="topic-content" id="implementation-of-stack">
+                        <p><strong>Implementation of Stack:</strong> A stack can be implemented using an array or a linked list.</p>
+                        <p><strong>Using array:</strong> In an array-based implementation, the push operation is implemented by incrementing the index of the top element and storing the new element at that index. The pop operation is implemented by decrementing the index of the top element and returning the value stored at that index.</p>
+                        <p><strong>Using linked list:</strong> In a linked list-based implementation, the push operation is implemented by creating a new node with the new element and setting the next pointer of the current top node to the new node. The pop operation is implemented by setting the next pointer of the current top node to the next node and returning the value of the current top node.</p>
+                        <p><strong>Stacks are commonly used in computer science for a variety of applications, including the evaluation of expressions, function calls, and memory management.</strong></p>
+                        <p>In the evaluation of expressions, a stack can be used to store operands and operators as they are processed. In function calls, a stack can be used to keep track of the order in which functions are called and to return control to the correct function when a function returns. In memory management, a stack can be used to store the values of the program counter and the values of the registers in a computer program, allowing the program to return to the previous state when a function returns.</p>
+                        <p>In conclusion, a Stack is a linear data structure that operates on the LIFO principle and can be implemented using an array or a linked list. The basic operations that can be performed on a stack include push, pop, and peek, and stacks are commonly used in computer science for a variety of applications, including the evaluation of expressions, function calls, and memory management.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <h2>Top 20 Stack Interview Questions</h2>
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Difficulty Level</th>
+            </tr>
+            <tr>
+                <td>Implement a stack using an array.</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>Reverse a string using a stack.</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>Check for balanced parentheses in an expression.</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Implement a stack that supports push, pop, top, and retrieving the maximum element in constant time.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Evaluate a postfix expression using a stack.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Implement a queue using stacks.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Implement a stack that supports getMin() in O(1) time and O(1) extra space.</td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>Implement a stack that supports getMax() in O(1) time and O(1) extra space.</td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>Design a stack with a function getMin() that returns the minimum element in the stack in O(1) time.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Sort a stack using only one additional stack and no other data structures.</td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>Implement a stack that supports pop, top, and retrieving the middle element in O(1) time.</td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>Implement two stacks in a single array.</td>
+                <td>Easy</td>
+            </tr>
+            <tr>
+                <td>Implement a stack with push, pop, empty, and a constant-time minimum function.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Implement a stack that supports sorting elements in ascending order.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Implement a stack that supports sorting elements in descending order.</td>
+                <td>Medium</td>
+            </tr>
+            <tr>
+                <td>Implement a stack that supports the operation "Get the kth element from the stack without popping it."</td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>Implement a stack with the following operations: insert, delete, get_random_element.</td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>Design a stack that supports the following operations: push, pop, top, getMin, retrieve the maximum element, and retrieve the kth maximum element.</td>
+                <td>Hard</td>
+            </tr>
+            <tr>
+                <td>Design a stack that supports the following operations: push, pop, top, getMin, retrieve the maximum element, and retrieve the kth maximum element.</td>
+                <td>Hard</td>
+            </tr>
+        </table>
+        <h2>Top 10 Frequently Asked Questions on Stacks</h2>
+<ol>
+    <li>Q1. What is a stack?</li>
+    <p>Ans. A stack is a linear data structure that follows the Last In First Out (LIFO) or First In Last Out (FILO) order. It is used to store and manage data where the element inserted last is the first to be removed.</p>
+
+    <li>Q2. How do stacks follow the LIFO principle?</li>
+    <p>Ans. Stacks follow the LIFO principle because the element that is inserted last is the one that is removed first. This is similar to a stack of plates where the plate added on top is the first to be removed.</p>
+
+    <li>Q3. What are the basic operations on a stack?</li>
+    <p>Ans. The basic stack operations include:
+    <ul>
+        <li>Push: Add an item to the stack.</li>
+        <li>Pop: Remove an item from the stack.</li>
+        <li>Top: Retrieve the top element of the stack.</li>
+        <li>IsEmpty: Check if the stack is empty.</li>
+        <li>Size: Get the number of elements in the stack.</li>
+    </ul>
+    </p>
+
+    <li>Q4. How is push() different from pop()?</li>
+    <p>Ans. The push() operation is used to add an item to the stack, increasing its size. The pop() operation, on the other hand, removes the top element from the stack, decreasing its size.</p>
+
+    <li>Q5. Explain the significance of the isEmpty() operation.</li>
+    <p>Ans. The isEmpty() operation checks if the stack is empty. It returns true if the stack has no elements and false if it contains one or more elements. It helps avoid errors when attempting to pop from an empty stack.</p>
+
+    <li>Q6. What are the types of stacks, and how do they differ?</li>
+    <p>Ans. There are two main types of stacks:
+    <ul>
+        <li>Fixed Size Stack: Has a fixed size and cannot change dynamically. It may lead to overflow and underflow conditions.</li>
+        <li>Dynamic Size Stack: Can grow or shrink dynamically. It is typically implemented using a linked list for easy resizing.</li>
+    </ul>
+    </p>
+
+    <li>Q7. What are the common applications of stacks?</li>
+    <p>Ans. Stacks have various applications, including:
+    <ul>
+        <li>Infix to Postfix/Prefix conversion</li>
+        <li>Redo-undo features in editors</li>
+        <li>Forward and backward features in web browsers</li>
+        <li>Used in algorithms like Tower of Hanoi and tree traversals</li>
+        <li>Backtracking in problems like the N-Queens puzzle</li>
+        <li>Memory management and function calls</li>
+        <li>String reversal</li>
+    </ul>
+    </p>
+
+    <li>Q8. How is a stack implemented?</li>
+    <p>Ans. A stack can be implemented using an array or a linked list. Push and pop operations are used to manipulate the stack. In an array-based implementation, the stack size is fixed, while a linked list-based implementation allows dynamic sizing.</p>
+
+    <li>Q9. What is the significance of the top() operation?</li>
+    <p>Ans. The top() operation returns the top element of the stack without removing it. It allows you to access the element at the top of the stack without altering the stack's state.</p>
+
+    <li>Q10. Explain the concept of stack complexity analysis.</li>
+    <p>Ans. Stack complexity analysis involves evaluating the time complexity of stack operations, such as push, pop, isEmpty, and size. These operations typically have O(1) time complexity, meaning they execute in constant time.</p>
+</ol>
+<h2>Conclusion</h2>
+<p>In conclusion, a stack is a fundamental linear data structure that operates on the Last In First Out (LIFO) or First In Last Out (FILO) principle. It is used to manage and store data where the last element inserted is the first to be removed. Stacks are employed in various applications across computer science, from converting infix expressions to postfix expressions, implementing undo-redo features in text editors, to aiding in algorithms like Tower of Hanoi and string reversal.</p>
+
+<p>Stacks can be implemented using arrays or linked lists and are characterized by essential operations such as push, pop, top, isEmpty, and size. The time complexity of these operations is typically O(1), ensuring fast and efficient data manipulation.</p>
+
+<p>Understanding stacks and their applications is crucial in computer science, as they play a vital role in solving a wide range of problems and optimizing various processes.</p>
+
+<h2>Related Articles</h2>
+<ul>
+    <li><a href="https://example.com/article1"  style="color: green;">How to Start Data Learning DSA?</a></li>
+    <li><a href="https://example.com/article2" style="color: green;">Competitive Programming – A Complete Guide</a></li>
+    <li><a href="https://example.com/article3" style="color: green;">How Can One Become Good at Data Structures and Algorithms Easily?</a></li>
+    <li><a href="https://example.com/article4" style="color: green;">Why Data Structures and Algorithms Are Important to Learn?</a></li>
+    <li><a href="https://example.com/article5" style="color: green;">Top 15 Websites for Coding Challenges and Competitions</a></li>
+    <li><a href="https://example.com/article6" style="color: green;">SDE SHEET – A Complete Guide for SDE Preparation</a></li>
+    <li><a href="https://example.com/article7" style="color: green;">Amazon SDE Sheet – A Guide for Amazon SDE Interview Preparation</a></li>
+    <li><a href="https://example.com/article8" style="color: green;">Google Interview Preparation for Software Engineer – A Complete Guide</a></li>
+    <li><a href="https://example.com/article9" style="color: green;">100 Days of Code – A Complete Guide for Beginners and Experienced</a></li>
+</ul>
+
+    </div>
+
+    <script>
+        function toggleTopic(topicId) {
+            var topicContent = document.getElementById(topicId);
+            if (topicContent.style.display === "none" || topicContent.style.display === "") {
+                topicContent.style.display = "block";
+            } else {
+                topicContent.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
